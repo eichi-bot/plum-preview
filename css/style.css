@@ -652,3 +652,22 @@ section.origin-sec .bean{--bean-gap:#EFECE2}
 .en-media p:not(.sec-label){font-size:14px;line-height:2;color:var(--ink-soft)}
 @media (max-width:860px){.en-points{grid-template-columns:1fr}.en-points>div{border-left:0;border-top:1px solid var(--line);padding:24px 0}.en-points>div:first-child{border-top:0}.en-media{grid-template-columns:1fr;gap:24px}}
 .dl-pdf{margin-top:28px}
+
+/* 取引の仕組み（つなぐ図） */
+.route{display:grid;grid-template-columns:1fr 36px 1fr 36px 1fr 36px 1fr;align-items:stretch;margin:16px 0 0}
+.route-node{background:#fff;border:1px solid var(--line);padding:22px 18px;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.route-node .rn-en{font-family:var(--latin);font-size:10.5px;letter-spacing:.22em;color:var(--ink-soft);font-weight:500}
+.route-node h4{font-family:var(--mincho);font-weight:500;font-size:16px;line-height:1.6;margin:8px 0 6px}
+.route-node p:last-child{font-size:12px;color:var(--ink-soft);line-height:1.8}
+.route-node.is-plum{background:var(--plum);border-color:var(--plum);color:#fff}
+.route-node.is-plum .rn-en,.route-node.is-plum p:last-child{color:#EBC9B4}
+.route-arrow{position:relative}
+.route-arrow::before{content:"";position:absolute;left:8px;right:8px;top:50%;height:1px;background:var(--ink-soft)}
+.route-arrow::after{content:"";position:absolute;right:8px;top:calc(50% - 4px);width:8px;height:8px;border-top:1px solid var(--ink-soft);border-right:1px solid var(--ink-soft);transform:rotate(45deg)}
+.route + p + .flow{margin-top:48px}
+@media (max-width:860px){
+  .route{grid-template-columns:1fr;gap:0}
+  .route-arrow{height:30px}
+  .route-arrow::before{left:50%;right:auto;top:6px;bottom:6px;width:1px;height:auto}
+  .route-arrow::after{right:auto;left:calc(50% - 4px);top:auto;bottom:7px;transform:rotate(135deg)}
+}
