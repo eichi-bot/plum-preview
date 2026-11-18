@@ -671,3 +671,4 @@ section.origin-sec .bean{--bean-gap:#EFECE2}
   .route-arrow::before{left:50%;right:auto;top:6px;bottom:6px;width:1px;height:auto}
   .route-arrow::after{right:auto;left:calc(50% - 4px);top:auto;bottom:7px;transform:rotate(135deg)}
 }
+.rn-link{border-bottom:1px solid var(--line)}.rn-link::after{content:' ↗';font-size:11px;color:var(--ink-soft)}
