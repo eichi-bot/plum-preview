@@ -672,3 +672,16 @@ section.origin-sec .bean{--bean-gap:#EFECE2}
   .route-arrow::after{right:auto;left:calc(50% - 4px);top:auto;bottom:7px;transform:rotate(135deg)}
 }
 .rn-link{border-bottom:1px solid var(--line)}.rn-link::after{content:' ↗';font-size:11px;color:var(--ink-soft)}
+
+/* 信頼の根拠：02 提携産地（写真右）・資料は2枠 */
+.trust-feature.rev{grid-template-columns:5fr 7fr;margin-top:28px}
+.trust-feature.rev .tf-ph{order:2}
+.tf-sub{aspect-ratio:16/9;background-size:cover;background-position:center 30%;margin-top:18px;max-width:260px}
+.trust-docs.two{grid-template-columns:repeat(2,1fr)}
+@media (max-width:860px){.trust-feature.rev{grid-template-columns:1fr}.trust-feature.rev .tf-ph{order:0}.trust-docs.two{grid-template-columns:1fr}.tf-sub{max-width:none}}
+.trust-feature.rev{grid-template-columns:1fr 1fr}
+.trust-feature.rev .tf-ph{aspect-ratio:auto;min-height:100%}
+.trust-feature.rev .tf-body h3{font-size:21px}
+.trust-docs.two .doc-frame{aspect-ratio:16/8}
+@media (max-width:860px){.trust-feature.rev .tf-ph{aspect-ratio:3/2;min-height:0}}
+@media (max-width:860px){.trust-feature.rev{grid-template-columns:1fr}.trust-feature.rev .tf-ph{order:0;aspect-ratio:3/2;min-height:0}.trust-feature.rev .tf-body h3{font-size:19px}}

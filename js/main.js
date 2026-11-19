@@ -86,7 +86,7 @@
     sumatra:{en:'SUMATRA',ja:'スマトラ',season:'<small>ロブスタ</small>通年<br><small>アラビカ（ガヨ）</small>10月〜2月<br><small>エクセルサ・リベリカ</small>5月〜8月',kinds:['ロブスタ','アラビカ（ガヨ）','エクセルサ','リベリカ'],note:'ガヨはスマトラ北部・アチェ州の高原にあるアラビカの産地です。'},
     wjava:{en:'WEST JAVA',ja:'西ジャワ',season:'5月〜9月',kinds:['アラビカ','ロブスタ'],note:'代表が視察した農園：スメダン県（標高1,300〜1,600m）'},
     cjava:{en:'CENTRAL JAVA',ja:'中部ジャワ',season:'5月〜9月',kinds:['アラビカ','ロブスタ']},
-    ejava:{en:'EAST JAVA',ja:'東ジャワ',season:'4月〜10月',kinds:['ロブスタ','アラビカ','エクセルサ']}
+    ejava:{en:'EAST JAVA',ja:'東ジャワ',season:'4月〜10月',kinds:['ロブスタ','アラビカ','エクセルサ'],note:'提携産地：ジョンバン県ウォノサラム（ITS・トヨタ生産方式の取り組み）'}
   };
   var card=document.querySelector('.region-card');
   if(!card) return;
