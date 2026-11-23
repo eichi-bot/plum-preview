@@ -685,3 +685,4 @@ section.origin-sec .bean{--bean-gap:#EFECE2}
 .trust-docs.two .doc-frame{aspect-ratio:16/8}
 @media (max-width:860px){.trust-feature.rev .tf-ph{aspect-ratio:3/2;min-height:0}}
 @media (max-width:860px){.trust-feature.rev{grid-template-columns:1fr}.trust-feature.rev .tf-ph{order:0;aspect-ratio:3/2;min-height:0}.trust-feature.rev .tf-body h3{font-size:19px}}
+.member-plain{padding-bottom:1px}
