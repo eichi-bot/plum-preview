@@ -741,3 +741,6 @@ body.menu-open .header .logo .logo-w{display:block}
 .cta{background:var(--logo-grad)}
 .route-node.is-plum,.region-tabs button.active,.sticky-cta,.form button{background:var(--logo-grad);border-color:transparent;color:#fff}
 .nav .btn-sm:hover{background:var(--logo-grad);border-color:transparent;color:#fff}
+.trust-docs.text-only{margin-top:40px;border-top:1px solid rgba(255,255,255,.2)}.trust-docs.text-only figure{padding-top:24px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-error{background:#FBEDEA;border:1px solid #E3B7AE;color:#8C2931;padding:12px 16px;margin-top:20px;font-size:14px}

@@ -37,8 +37,12 @@
   <div class="narrow">
     <p class="sec-label">CONTACT</p>
     <h1 class="sec-title">お問い合わせ</h1>
-    <p class="muted" style="font-size:13.5px">内容を確認のうえ、担当者よりご連絡いたします。<span class="tbd">試作のため送信されません</span></p>
-    <form class="form" onsubmit="alert('試作のため送信されません');return false;">
+    <p class="muted" style="font-size:14px">内容を確認のうえ、担当者よりご連絡いたします。</p>
+    <p class="form-error" id="form-error" role="alert" hidden></p>
+    <form class="form" onsubmit="alert('プレビューでは送信されません（公開後に送信できます）');return false;">
+      <!-- 迷惑メール対策：人には見えない欄（入力があれば送らない） -->
+      <div class="hp" aria-hidden="true"><label>ウェブサイト<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <input type="hidden" name="t" id="form-t" value="">
       <div>
         <label>ご相談の種類<span class="req">必須</span></label>
         <div class="radios">
@@ -48,31 +52,31 @@
           <label><input type="radio" name="type" value="other">その他</label>
         </div>
       </div>
-      <div><label for="co">会社名<span class="req">必須</span></label><input id="co" required></div>
-      <div><label for="nm">お名前<span class="req">必須</span></label><input id="nm" required></div>
-      <div><label for="em">メールアドレス<span class="req">必須</span></label><input id="em" type="email" required></div>
-      <div><label for="tl">電話番号</label><input id="tl" type="tel"></div>
+      <div><label for="co">会社名<span class="req">必須</span></label><input id="co" name="company" required autocomplete="organization"></div>
+      <div><label for="nm">お名前<span class="req">必須</span></label><input id="nm" name="name" required autocomplete="name"></div>
+      <div><label for="em">メールアドレス<span class="req">必須</span></label><input id="em" name="email" type="email" required autocomplete="email"></div>
+      <div><label for="tl">電話番号</label><input id="tl" name="tel" type="tel" autocomplete="tel"></div>
       <!-- サンプルを選んだときだけ出す欄 -->
       <fieldset class="sample-fields" hidden>
         <legend>サンプルについて</legend>
         <div>
           <label>ご希望の品種</label>
           <div class="radios">
-            <label><input type="checkbox" name="kind" value="arabica">アラビカ</label>
-            <label><input type="checkbox" name="kind" value="robusta">ロブスタ</label>
-            <label><input type="checkbox" name="kind" value="excelsa">エクセルサ</label>
-            <label><input type="checkbox" name="kind" value="liberica">リベリカ</label>
-            <label><input type="checkbox" name="kind" value="any">おまかせ</label>
+            <label><input type="checkbox" name="kind[]" value="arabica">アラビカ</label>
+            <label><input type="checkbox" name="kind[]" value="robusta">ロブスタ</label>
+            <label><input type="checkbox" name="kind[]" value="excelsa">エクセルサ</label>
+            <label><input type="checkbox" name="kind[]" value="liberica">リベリカ</label>
+            <label><input type="checkbox" name="kind[]" value="any">おまかせ</label>
           </div>
         </div>
         <div class="form-2col">
-          <div><label for="vol">ご検討中の量（1回あたり）</label><select id="vol"><option value="">選んでください</option><option>〜100kg</option><option>100kg〜1t</option><option>1t〜（コンテナ単位）</option><option>未定</option></select></div>
-          <div><label for="when">ご希望の時期</label><input id="when" placeholder="例：2027年春ごろ"></div>
+          <div><label for="vol">ご検討中の量（1回あたり）</label><select id="vol" name="volume"><option value="">選んでください</option><option>〜100kg</option><option>100kg〜1t</option><option>1t〜（コンテナ単位）</option><option>未定</option></select></div>
+          <div><label for="when">ご希望の時期</label><input id="when" name="when" placeholder="例：2027年春ごろ"></div>
         </div>
-        <div><label for="addr">サンプルのお届け先</label><input id="addr" placeholder="〒・住所・ご担当者さま"></div>
+        <div><label for="addr">サンプルのお届け先</label><input id="addr" name="address" placeholder="〒・住所・ご担当者さま"></div>
       </fieldset>
-      <div><label for="ms">お問い合わせ内容<span class="req">必須</span></label><textarea id="ms" required placeholder="ご質問やご要望をご記入ください"></textarea></div>
-      <label class="radios" style="font-family:var(--gothic);font-size:13px"><input type="checkbox" required> <a href="privacy.html" target="_blank" style="border-bottom:1px solid">プライバシーポリシー</a>に同意する</label>
+      <div><label for="ms">お問い合わせ内容<span class="req">必須</span></label><textarea id="ms" name="message" required placeholder="ご質問やご要望をご記入ください"></textarea></div>
+      <label class="radios" style="font-family:var(--gothic);font-size:13px"><input type="checkbox" name="agree" value="1" required> <a href="privacy.html" target="_blank" style="border-bottom:1px solid">プライバシーポリシー</a>に同意する</label>
       <button type="submit">送信する</button>
     </form>
   </div>
@@ -82,6 +86,9 @@
 <div class="proto-bar">試作 v1｜黄色の札＝確認待ち</div>
 <script src="js/main.js"></script>
 <script>
+  var er=new URLSearchParams(location.search).get('error'); if(er){var fe=document.getElementById('form-error'); fe.hidden=false; fe.textContent=(er==='1')?'入力されていない項目があります。必須の欄とメールアドレスをご確認ください。':'送信できませんでした。お手数ですが、お電話（052-740-6618）でお問い合わせください。';}
+  // 送信までの時間を測る（数秒で送るロボットを止める）
+  document.getElementById('form-t').value=String(Math.floor(Date.now()/1000));
   var t=new URLSearchParams(location.search).get('type');
   if(t){var r=document.querySelector('input[name=type][value="'+t+'"]'); if(r) r.checked=true;}
   // 「サンプルのご依頼」を選んだときだけ、品種・量・時期・届け先の欄を出す
