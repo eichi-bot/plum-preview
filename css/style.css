@@ -5,8 +5,8 @@
   --ink:#2A2521;
   --ink-soft:#5E554D;
   --line:#D9D3C6;
-  --plum:#6B2E42;       /* 社名のプラム色 */
-  --plum-deep:#3F1B28;
+  --plum:#5A0A3A;       /* ロゴの紫（2026-11-24 ロゴに合わせて変更） */
+  --plum-deep:#2C0620;
   --cherry:#A8342C;     /* 完熟チェリー */
   --leaf:#4E6A4B;
   --gold:#B08A4E;
@@ -560,7 +560,7 @@ section.origin-sec .bean{--bean-gap:#EFECE2}
   .calv-c.on.other::before{background:var(--leaf)}
   .calv-c.on.start::before{top:6px;border-radius:999px 999px 0 0}
   .calv-c.on.end::before{bottom:6px;border-radius:0 0 999px 999px}
-  .calv .hl{background:rgba(107,46,66,.06)}
+  .calv .hl{background:rgba(90,10,58,.06)}
   .calv-h.hl b{color:var(--plum);font-weight:700}
 }
 @media (max-width:860px){
@@ -595,7 +595,7 @@ section.origin-sec .bean{--bean-gap:#EFECE2}
 /* スマホのサンプル依頼ボタン（常に下に表示） */
 .sticky-cta{display:none}
 @media (max-width:860px){
-  .sticky-cta{display:flex;align-items:center;justify-content:center;position:fixed;left:12px;right:74px;bottom:14px;z-index:79;height:48px;border-radius:999px;background:var(--plum);color:#fff;font-family:var(--mincho);font-size:14px;box-shadow:0 6px 18px rgba(63,27,40,.25)}
+  .sticky-cta{display:flex;align-items:center;justify-content:center;position:fixed;left:12px;right:74px;bottom:14px;z-index:79;height:48px;border-radius:999px;background:var(--plum);color:#fff;font-family:var(--mincho);font-size:14px;box-shadow:0 6px 18px rgba(44,6,32,.25)}
   .to-top{bottom:14px;right:14px}
   body:has(.sticky-cta) .proto-bar{bottom:70px}
   body:has(.sticky-cta) .footer{padding-bottom:90px}
@@ -731,3 +731,13 @@ section.origin-sec .bean{--bean-gap:#EFECE2}
 @media (max-width:860px){.logo img{height:30px}}
 body.menu-open .header .logo .logo-c{display:none}
 body.menu-open .header .logo .logo-w{display:block}
+
+/* お問い合わせの上の波：下の帯の色（単色でもグラデーションでも）をそのまま見せる形に */
+#contact.wave-top::before{background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%201600%20130%27%20preserveAspectRatio%3D%27none%27%3E%3Cpath%20d%3D%27M0%2C0H1600V52C1340%2C105%201080%2C62%20800%2C62S260%2C30%200%2C70Z%27%20fill%3D%27%23F8F7F1%27%2F%3E%3Cpath%20d%3D%27M0%2C70C260%2C30%20520%2C30%20800%2C62S1340%2C105%201600%2C52V80C1380%2C118%201160%2C88%20860%2C88S300%2C60%200%2C92Z%27%20fill%3D%27%23F8F7F1%27%20fill-opacity%3D%27.42%27%2F%3E%3C%2Fsvg%3E") no-repeat top/100% 100%}
+
+/* ===== 色（2026-11-24 採用：案3 ロゴの紫＋要所だけロゴと同じグラデーション） ===== */
+:root{--plum:#5A0A3A;--plum-deep:#2C0620;--cherry:#8C2931;--logo-grad:linear-gradient(115deg,#520338 0%,#8C2931 58%,#BF642A 100%)}
+.gate-people::before{background:linear-gradient(180deg,rgba(44,6,32,.35),rgba(44,6,32,.92) 75%)}
+.cta{background:var(--logo-grad)}
+.route-node.is-plum,.region-tabs button.active,.sticky-cta,.form button{background:var(--logo-grad);border-color:transparent;color:#fff}
+.nav .btn-sm:hover{background:var(--logo-grad);border-color:transparent;color:#fff}
