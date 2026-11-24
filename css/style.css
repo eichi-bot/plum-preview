@@ -686,3 +686,28 @@ section.origin-sec .bean{--bean-gap:#EFECE2}
 @media (max-width:860px){.trust-feature.rev .tf-ph{aspect-ratio:3/2;min-height:0}}
 @media (max-width:860px){.trust-feature.rev{grid-template-columns:1fr}.trust-feature.rev .tf-ph{order:0;aspect-ratio:3/2;min-height:0}.trust-feature.rev .tf-body h3{font-size:19px}}
 .member-plain{padding-bottom:1px}
+
+/* ===== 曲線（2026-11-24 採用：D アーチ形の写真／E 回る円の文字／G 日本へのルート線） ===== */
+/* D：写真の上をアーチ形に（スライダー・強み・現地の工程） */
+.marquee-track div{border-radius:150px 150px 0 0}
+.strength .ph{border-radius:999px 999px 0 0}
+.process figure .ph{border-radius:999px 999px 0 0}
+@media (max-width:860px){.marquee-track div{border-radius:100px 100px 0 0}}
+
+/* E：2TOPのコーヒー側に、文字が円を描いてゆっくり回る印 */
+.curve-badge{position:absolute;z-index:3;right:6%;top:16%;width:150px;height:150px;pointer-events:none}
+.curve-badge svg{width:100%;height:100%}
+.curve-badge .cb-ring{animation:cbspin 28s linear infinite;transform-origin:50% 50%}
+.curve-badge text{font-family:var(--latin);font-size:13.5px;letter-spacing:.32em;fill:#fff;font-weight:500}
+.curve-badge .cb-bean{position:absolute;left:50%;top:50%;width:30px;transform:translate(-50%,-50%) rotate(25deg)}
+@keyframes cbspin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.curve-badge .cb-ring{animation:none}}
+@media (max-width:860px){.curve-badge{width:96px;height:96px;right:5%;top:13%}.curve-badge .cb-bean{width:20px}}
+
+/* G：産地マップに、インドネシアから日本へ向かう点線のルート */
+.atlas-map .route-line path{fill:none;stroke:var(--plum);stroke-width:2;stroke-dasharray:2 7;stroke-linecap:round;animation:rlmove 2.4s linear infinite}
+.atlas-map .route-line circle{fill:var(--plum)}
+.atlas-map .route-line text{font-family:var(--latin);font-size:14px;font-weight:600;letter-spacing:.25em;fill:var(--plum)}
+.atlas-map .route-line .rl-ja{font-family:var(--mincho);font-size:12px;letter-spacing:.1em;font-weight:500}
+@keyframes rlmove{to{stroke-dashoffset:-18}}
+@media (prefers-reduced-motion:reduce){.atlas-map .route-line path{animation:none}}
