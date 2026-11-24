@@ -721,3 +721,13 @@ section.origin-sec .bean{--bean-gap:#EFECE2}
   #contact.wave-top{padding-top:130px}
   #contact.wave-top::before{height:60px}
 }
+
+/* ===== ロゴ（2026-11-24 支給データ） ===== */
+.logo img{display:block;height:38px;width:auto}
+.header .logo .logo-w{display:none}
+.header.on-dark:not(.scrolled) .logo .logo-c{display:none}
+.header.on-dark:not(.scrolled) .logo .logo-w{display:block}
+.footer .logo img{height:40px}
+@media (max-width:860px){.logo img{height:30px}}
+body.menu-open .header .logo .logo-c{display:none}
+body.menu-open .header .logo .logo-w{display:block}

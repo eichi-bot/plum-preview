@@ -15,6 +15,7 @@
     'html[data-gate="wait"] #plum-gate{visibility:visible!important}' +
     '#plum-gate{position:fixed;inset:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;background:#F8F7F1;padding:1rem;font-family:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif}' +
     '#plum-gate .g-card{background:#fff;border:1px solid #D9D3C6;max-width:360px;width:100%;padding:2.2rem 1.6rem 1.8rem;text-align:center;color:#2A2521}' +
+    '#plum-gate .g-logo{display:block;height:44px;width:auto;margin:0 auto 1.2rem}' +
     '#plum-gate .mark{width:40px;height:40px;margin:0 auto 1rem;border-radius:50%;background:radial-gradient(circle at 35% 35%,#9A4D64,#6B2E42 60%,#3F1B28)}' +
     '#plum-gate h2{font-family:"Shippori Mincho","Yu Mincho",serif;font-weight:500;font-size:1.15rem;margin:0 0 .5rem;letter-spacing:.08em}' +
     '#plum-gate p{font-size:.8rem;color:#5E554D;margin:0 0 1.3rem;line-height:1.9}' +
@@ -36,8 +37,7 @@
     var g = document.createElement("div");
     g.id = "plum-gate";
     g.innerHTML =
-      '<div class="g-card"><div class="mark" aria-hidden="true"></div>' +
-      '<h2>株式会社プラム</h2>' +
+      '<div class="g-card"><img class="g-logo" src="img/logo-h-color.png" alt="PLUM 株式会社プラム">' +
       '<p>ホームページの<strong>試作（非公開プレビュー）</strong>です。<br>合言葉を入力してください。</p>' +
       '<input id="plum-gate-pw" type="password" autocomplete="off" placeholder="合言葉" aria-label="合言葉" />' +
       '<button id="plum-gate-go" type="button">見る</button>' +
