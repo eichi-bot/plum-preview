@@ -711,3 +711,13 @@ section.origin-sec .bean{--bean-gap:#EFECE2}
 .atlas-map .route-line .rl-ja{font-family:var(--mincho);font-size:12px;letter-spacing:.1em;font-weight:500}
 @keyframes rlmove{to{stroke-dashoffset:-18}}
 @media (prefers-reduced-motion:reduce){.atlas-map .route-line path{animation:none}}
+
+/* ===== 曲線の区切り（2026-11-24 採用：L コーヒー事業のヒーロー下のゆらぎの波／I お問い合わせの上の2層の波） ===== */
+.page-hero.wave-bottom::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:95px;z-index:2;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%201600%2095%27%20preserveAspectRatio%3D%27none%27%3E%3Cpath%20d%3D%27M0%2C95V62C180%2C30%20360%2C34%20560%2C60S940%2C98%201160%2C64S1460%2C34%201600%2C50V95Z%27%20fill%3D%27%23F8F7F1%27%2F%3E%3C%2Fsvg%3E") no-repeat bottom/100% 100%;pointer-events:none}
+#contact.wave-top{position:relative;padding-top:200px}
+#contact.wave-top::before{content:"";position:absolute;left:0;right:0;top:-1px;height:130px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%201600%20130%27%20preserveAspectRatio%3D%27none%27%3E%3Crect%20width%3D%271600%27%20height%3D%27130%27%20fill%3D%27%23F8F7F1%27%2F%3E%3Cpath%20d%3D%27M0%2C70C260%2C30%20520%2C30%20800%2C62S1340%2C105%201600%2C52V130H0Z%27%20fill%3D%27%2393485F%27%20fill-opacity%3D%27.45%27%2F%3E%3Cpath%20d%3D%27M0%2C92C300%2C60%20560%2C64%20860%2C88S1380%2C118%201600%2C80V130H0Z%27%20fill%3D%27%236B2E42%27%2F%3E%3C%2Fsvg%3E") no-repeat top/100% 100%;pointer-events:none}
+@media (max-width:860px){
+  .page-hero.wave-bottom::after{height:44px}
+  #contact.wave-top{padding-top:130px}
+  #contact.wave-top::before{height:60px}
+}
