@@ -744,3 +744,16 @@ body.menu-open .header .logo .logo-w{display:block}
 .trust-docs.text-only{margin-top:40px;border-top:1px solid rgba(255,255,255,.2)}.trust-docs.text-only figure{padding-top:24px}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .form-error{background:#FBEDEA;border:1px solid #E3B7AE;color:#8C2931;padding:12px 16px;margin-top:20px;font-size:14px}
+
+/* 言語切り替え JA / EN / ID（2026-11-27） */
+.nav .langs{display:inline-flex;align-items:center;gap:0;font-family:var(--latin);font-size:12px;letter-spacing:.12em}
+.nav .langs a{padding:4px 7px;opacity:.6}
+.nav .langs a+a{border-left:1px solid currentColor}
+.nav .langs a[aria-current]{opacity:1;font-weight:600}
+.nav .langs a::after{display:none}
+.nav .langs a:hover{opacity:1}
+@media (max-width:860px){
+  .nav .langs{font-size:15px;margin-top:6px}
+  .nav .langs a{padding:6px 14px}
+  .nav .langs a+a{border-left-color:rgba(255,255,255,.4)}
+}
